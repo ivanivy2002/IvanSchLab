@@ -1,0 +1,27 @@
+编译:直接编译
+运行步骤:直接运行
+本组文件的main函数对于用户仅支持测试.
+其他函数和类释义:
+lab-1:
+zeroize: 归零,仅在开始进行,如果希望每次都清空,可以在printResult里面书写zeroize;
+integerize: 将浮点数转化成最近的整数(四舍五入), 好像有现成的库函数,但我没找出来,所以用了floor和ceil整出来;
+
+lab-2:
+建立了两个独立的类,一个是灰度,用char,一个是比特,用bool;
+initialize: 初始化,这里指的是输入一个标志,标记接下来测试的类型是灰度还是比特;
+quit_ask: 使得不会直接退出,而是可以反复测试;
+input: 类里的函数,可以实现由用户输入的功能,但是未写入main的测试中;如果希望写入,加入代码如下:
+	segment_c.input();
+	segment_c.draw();
+	segment_c.printResult();
+
+	或者
+	segment_b.input();
+	segment_b.draw();
+	segment_b.printResult();
+
+draw: 是从原来的line函数里面拆分出来的,但是写到这里我觉得这样的拆分意义不大,只是使得draw没有参数了...
+struct Point:新建了点的结构,但是目前没有看出方便性...也许当点本身开始变复杂的时候会有所用途.
+
+lab-2-2:
+使用了模板和构造函数,但是可惜不能够在if里面定义对象,还是写了两遍测试.
